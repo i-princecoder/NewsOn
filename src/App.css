@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+/* navbar*/
+
+.navbar-brand {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #d62828, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.news-heading {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #d62828;
+  padding-bottom: 5px;
+  margin: 35px auto;
+  text-align: center;
+  display: block;
+  width: fit-content;
+}
+
+.news-gradient {
+  background: linear-gradient(90deg, #d62828, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.news-subtitle {
+  color: #000000;
+}
