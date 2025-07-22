@@ -37,8 +37,33 @@
   }
 }
 
-/* navbar*/
+body {
+  background: url("../public/istockphoto-1018450682-612x612.webp") no-repeat
+    center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
+.container,
+.row {
+  overflow-x: hidden;
+}
+/* navbar*/
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.navbar-colored {
+  background-color: #f8f9fa !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
 .navbar-brand {
   font-family: "Merriweather", serif;
   font-weight: 700;
@@ -69,4 +94,44 @@
 
 .news-subtitle {
   color: #000000;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #d62828, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+.gradient-text:hover {
+  background: linear-gradient(90deg, #000000, #d62828);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-color: #000000;
+}
+
+.btn-search {
+  border: 2px solid #d62828;
+}
+.search-input {
+  border: 2px solid #d62828;
+}
+.search-input:focus {
+  border-color: #000000; /* change border when focused */
+  box-shadow: 0 0 5px rgba(214, 40, 40, 0.5); /* subtle glow */
+}
+
+.btn-read {
+  background: linear-gradient(90deg, #d62828, #000000);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn-read:hover {
+  transform: scale(1.05); /* makes it pop slightly */
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* shadow for depth */
+  cursor: pointer;
 }
