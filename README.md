@@ -1,4 +1,10 @@
 📰 NewsOn – React News Website
+## 📰 NewsOn - React News App
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=css3&logoColor=white)
+
 NewsOn is a responsive news website built with React.js, Bootstrap, and Reactive CSS. It fetches live news articles from the NewsAPI and displays them with smooth UI interactions and a clean design.
 
 This project was created as part of my portfolio to showcase frontend development skills and modern UI design practices.
