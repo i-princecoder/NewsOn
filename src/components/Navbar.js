@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const Navbar = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,69 +30,103 @@ const Navbar = (props) => {
     e.preventDefault();
     props.onSearch(searchTerm.toLowerCase());
     setSearchTerm("");
+    setIsMenuOpen(false);
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
     <div>
       <nav
         className={`navbar fixed-top navbar-expand-lg ${
-          isScrolled ? "navbar-colored" : "navbar-transparent"
+          isScrolled || isMenuOpen ? "navbar-colored" : "navbar-transparent"
         }`}
       >
         <div className="container-fluid">
-          <Link className="navbar-brand" to="#">
+          <Link className="navbar-brand" to="#" onClick={handleLinkClick}>
             NewsOn
           </Link>
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen ? "true" : "false"}
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 gradient-text">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link className="nav-link" to="/" onClick={handleLinkClick}>
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/business">
+                <Link
+                  className="nav-link"
+                  to="/business"
+                  onClick={handleLinkClick}
+                >
                   Business
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/entertainment">
+                <Link
+                  className="nav-link"
+                  to="/entertainment"
+                  onClick={handleLinkClick}
+                >
                   Entertainment
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/general">
+                <Link
+                  className="nav-link"
+                  to="/general"
+                  onClick={handleLinkClick}
+                >
                   General
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/health">
+                <Link
+                  className="nav-link"
+                  to="/health"
+                  onClick={handleLinkClick}
+                >
                   Health
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/science">
+                <Link
+                  className="nav-link"
+                  to="/science"
+                  onClick={handleLinkClick}
+                >
                   Science
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/sports">
+                <Link
+                  className="nav-link"
+                  to="/sports"
+                  onClick={handleLinkClick}
+                >
                   Sports
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/technology">
+                <Link
+                  className="nav-link"
+                  to="/technology"
+                  onClick={handleLinkClick}
+                >
                   Technology
                 </Link>
               </li>
